@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Sextou extends StatelessWidget{
- const Sextou({super.key});
+  final String? nome;
+  final String? sobrenome;
+  final Function() onRemove;
+ 
+ const Sextou ({
+  required this.nome,
+  required this.sobrenome,
+  required this.onRemove
+ });
 
  @override
   Widget build(BuildContext context) {
@@ -12,13 +20,13 @@ class Sextou extends StatelessWidget{
           margin: EdgeInsets.all(20),
           child: Column(
             children: [
-              Text("Texto1",
+              Text('$nome',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18
               ),
               ),
-              Text("Texto2",
+              Text('$sobrenome',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.deepPurple
@@ -27,7 +35,10 @@ class Sextou extends StatelessWidget{
             ],
           ),
         ),
-        IconButton(onPressed: (){}, 
+        Expanded(child: Container(),),
+        IconButton(onPressed: (){
+          onRemove();
+        }, 
         icon: Icon(Icons.delete),
         )
       ],

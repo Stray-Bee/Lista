@@ -41,7 +41,8 @@ class _Tela1State extends State<Tela1> {
     Pessoa(nome: "Gill", idade: 26, sobrenome: "...", cpf: "671.813.871-11"),
     Pessoa(nome: "Katerine", idade: 29, sobrenome: "...", cpf: "671.813.871-11"),
     Pessoa(nome: "Sebastian", idade: 32, sobrenome: "...", cpf: "671.813.871-11"),
-    Pessoa(nome: "Sebastian", idade: 32, sobrenome: "...", cpf: "671.813.871-11"),
+    Pessoa(nome: "Vênus", idade: 27, sobrenome: "...", cpf: "671.813.871-11"),
+    Pessoa(nome: "Jacob", idade: 30, sobrenome: "...", cpf: "671.813.871-11"),
     Pessoa(nome: "Ryo", idade: 26, sobrenome: "Nishimura", cpf: "671.813.871-11"),
     Pessoa(nome: "Hiroaki", idade: 24, sobrenome: "Nakamura", cpf: "000.000.000-00"),
     Pessoa(nome: "Hiroto", idade: 22, sobrenome: "Nakamura", cpf: "000.000.000-00"),
@@ -70,6 +71,12 @@ class _Tela1State extends State<Tela1> {
     Pessoa(nome: "Terry", idade: 21, sobrenome: "......", cpf: "000.000.000-00"),
   ];
 
+  void removerItem(int index){
+    setState(() {
+      lista.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +87,10 @@ class _Tela1State extends State<Tela1> {
         body: ListView.builder(
             itemCount: lista.length,
             itemBuilder: (context, index) {
-              return Sextou();
+              return Sextou(
+                nome: lista[index].nome, 
+                sobrenome: lista[index].sobrenome, onRemove: () => removerItem(index),
+              );
             
             },
             //return Text(lista[index].nome);
