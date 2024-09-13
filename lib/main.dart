@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "App Lita para Widget",
       home: Tela1(),
     );
@@ -31,7 +32,7 @@ class _Tela1State extends State<Tela1> {
     Pessoa(nome: "Cody", idade: 24, sobrenome: "......", cpf: "000.000.000-00"),
     Pessoa(nome: "Emma", idade: 23, sobrenome: "......", cpf: "000.000.000-00"),
     Pessoa(nome: "Gage", idade: 24, sobrenome: "......", cpf: "000.000.000-00"),
-    Pessoa(nome: "Iris", idade: 23, sobrenome: "......", cpf: "000.000.000-00"),    Pessoa(nome: "Robert", idade: 29, sobrenome: "....", cpf: "000.000.000-00"),
+    Pessoa(nome: "Iris", idade: 23, sobrenome: "......", cpf: "000.000.000-00"),
     Pessoa(nome: "Kaio", idade: 24, sobrenome: "......", cpf: "000.000.000-00"),
     Pessoa(nome: "Yllin", idade: 26, sobrenome: "......", cpf: "000.000.000-00"),
     Pessoa(nome: "Marco", idade: 24, sobrenome: "......", cpf: "000.000.000-00"),
